@@ -1,0 +1,57 @@
+@import 'OpenSans.css';
+
+body {
+  background-color: #e9ebee !important;
+  font-family: 'Open Sans', sans-serif !important;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.v-wrap {
+  margin-top: 20px;
+  .v-page {
+    float: left;
+    width: calc(100% - 290px);
+
+    .content-list {
+      margin-left: -10px;
+      margin-right: -10px;
+    }
+    .content-item-wrap {
+      width: 50%;
+      padding: 10px;
+
+      .content-item {
+        box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+        height: 100%
+      }
+    }
+    @media (max-width: 989px) {
+      .content-item-wrap {
+        width: 100%
+      }
+    }
+  }
+
+  .v-sidebar {
+    float: right;
+    width: 280px;
+
+    .widget {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+  @media (max-width: 991px) {
+    .v-page {
+      width: 100%;
+    }
+    .v-sidebar {
+      display: none;
+    }
+  }
+}
+
+.ant-card-head h6 {
+  line-height: 48px !important;
+}
