@@ -59,6 +59,21 @@
       height: 100%;
       display: flex;
       align-items: center;
+      a {
+        font-size: 18px;
+        color: #505050;
+        transition: color 0.5s linear;
+      }
+      a:hover {
+        text-decoration: none;
+        color: #4c8272;
+      }
+      a:focus {
+        text-decoration: none;
+      }
+      .a-menu {
+        @extend .a-menu;
+      }
     }
   }
 }

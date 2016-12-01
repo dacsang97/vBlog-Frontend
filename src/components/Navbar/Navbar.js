@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import { Link } from 'react-router';
 import './navbar.scss';
 import logo from '../../assets/images/logo.svg';
 
@@ -9,19 +10,21 @@ const Navbar = (props) => {
       <div className="header">
         <div className="headerContainer">
           <div className="left">
-            <a href="#" className="a-menu">
+            <Link to="#" className="a-menu">
               <i className="icon-menu" />
-            </a>
+            </Link>
           </div>
-          <a className="logo">
-            <img src={logo} width="50" height="30" className="d-inline-block align-top" alt="" />
-            Blog
-          </a>
+          <div className="logo">
+            <Link to="/" className="a-menu">
+              <img src={logo} width="50" height="30" className="d-inline-block align-top" alt="" />
+              Blog
+            </Link>
+          </div>
           <div className="right">
             { guest ?
-              <a href="#" className="a-menu">
+              <Link to="/login" className="a-menu">
                 <i className="icon-login" />
-              </a> :
+              </Link> :
               user ?
                 <a href="#" className="a-menu">
                   <i className="icon-login" />

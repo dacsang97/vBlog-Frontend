@@ -3,5 +3,6 @@
  */
 import Home from './Home';
 import App from './App';
+import Login from './Login';
 
-export { Home, App };
+export { Home, App, Login };
