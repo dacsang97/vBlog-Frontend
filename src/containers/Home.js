@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { TopMenu, Sidebar, ContentList } from '../components';
+import WrapContainer from './WrapContainer';
 import { setTitle } from '../utils';
 
 export default class Home extends Component {
@@ -11,7 +12,9 @@ export default class Home extends Component {
       <div className="v-wrap">
         <div className="v-page">
           <TopMenu />
-          <ContentList />
+          <WrapContainer animatedIn="fadeIn">
+            <ContentList />
+          </WrapContainer>
         </div>
         <Sidebar />
       </div>

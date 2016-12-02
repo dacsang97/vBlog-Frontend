@@ -12,7 +12,7 @@ const LoginForm = (props) => {
     <Form onSubmit={handleSubmit(props.onSubmit)}>
       <Field name="email" type="email" component={renderField} label="Email" />
       <Field name="password" type="password" component={renderField} label="Password" />
-      <Button type="submit">Submit</Button>
+      <Button type="submit" color="info">Submit</Button>
     </Form>
   )
 }

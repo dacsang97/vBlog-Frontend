@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { reduxForm } from 'redux-form';
 import { Row, Col, Card, CardBlock } from 'reactstrap';
@@ -6,7 +6,7 @@ import validator from 'validator';
 import LoginForm from '../components/LoginForm/LoginForm';
 import { setTitle } from '../utils';
 import WrapContainer from './WrapContainer';
-
+import AuthAction from '../actions/auth';
 
 class LoginContainer extends Component {
   constructor(props) {
@@ -18,6 +18,8 @@ class LoginContainer extends Component {
   }
   onSubmit(e) {
     console.log(e);
+    const { email, password } = e;
+    this.props.attemptLogin(email, password);
   }
   render() {
     return (
@@ -41,6 +43,10 @@ class LoginContainer extends Component {
   }
 }
 
+LoginContainer.propTypes = {
+  attemptLogin: PropTypes.func,
+}
+
 const validate = (values) => {
   const { email, password } = values;
   const errors = {};
@@ -52,9 +58,15 @@ const validate = (values) => {
   return errors;
 };
 
+function mapDispatchToProps(dispatch) {
+  return {
+    attemptLogin: (email, password) => dispatch(AuthAction.loginRequest(email, password)),
+  };
+}
+
 const Login = reduxForm({
   form: 'Login',
   validate,
 })(LoginContainer);
 
-export default connect()(Login);
+export default connect(null, mapDispatchToProps)(Login);

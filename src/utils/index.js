@@ -21,9 +21,9 @@ export function renderField({ input, label, type, name, meta: { touched, error }
 }
 
 renderField.propTypes = {
-  input: PropTypes.string,
+  input: PropTypes.object,
   label: PropTypes.string,
   type: PropTypes.string,
   name: PropTypes.string,
-  meta: PropTypes.sharp,
+  meta: PropTypes.object,
 }

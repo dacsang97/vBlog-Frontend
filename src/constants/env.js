@@ -1,3 +1,6 @@
+/**
+ * Created by sang on 12/2/16.
+ */
 const env = {};
 
 if (process.env.NODE_ENV === 'production') {

@@ -54,6 +54,7 @@
   "dependencies": {
     "animate.css": "^3.5.2",
     "antd": "^2.5.0",
+    "axios": "^0.15.3",
     "bootstrap": "4.0.0-alpha.5",
     "classnames": "^2.2.5",
     "humps": "^1.1.0",
