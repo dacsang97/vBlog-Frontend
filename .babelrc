@@ -1,5 +1,10 @@
 {
   "presets": ["react", "es2015", "react-app"],
+  "plugins": [["import", {
+    "libraryName": "antd",
+    "libraryDirectory": "lib",   // default: lib
+    "style": true
+  }]],
   "env": {
     "development": {
       "plugins": [["react-transform", {

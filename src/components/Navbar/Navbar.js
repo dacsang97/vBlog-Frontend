@@ -5,6 +5,7 @@ import logo from '../../assets/images/logo.svg';
 
 const Navbar = (props) => {
   const { auth: { guest, user } } = props;
+  console.log(props.location);
   return (
     <div>
       <div className="header">
@@ -27,7 +28,7 @@ const Navbar = (props) => {
               </Link> :
               user ?
                 <a href="#" className="a-menu">
-                  <i className="icon-login" />
+                  <h1>{user.display_name}</h1>
                 </a>
                 : null
             }

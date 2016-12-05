@@ -122,6 +122,10 @@ module.exports = {
         test: /\.scss$/,
         loader: 'style!css!sass'
       },
+      {
+        test: /\.less$/,
+        loader: 'style!css!less'
+      },
       // JSON is not enabled by default in Webpack but both Node and Browserify
       // allow it implicitly so we also enable it.
       {

@@ -9,13 +9,9 @@ const { Types, Creators } = createActions({
   loginSuccess: ['email'],
   loginFailure: ['error'],
   logout: null,
-  checkToken: ['token'],
+  checkToken: null,
+  isAuthenticated: ['authenticate'],
 });
-
-export const checkToken = (token: String) => {
-  const result = `${token}_token`;
-  return dispatch => dispatch(Creators.checkToken(result));
-}
 
 export const LoginTypes = Types;
 export default Creators;

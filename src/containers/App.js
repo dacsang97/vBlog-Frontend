@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Container } from 'reactstrap';
 // import { browserHistory } from 'react-router';
 import Navbar from '../components/Navbar/Navbar';
-import { checkToken } from '../actions/auth';
+import AuthAction from '../actions/auth';
 
 class App extends Component {
   static propTypes = {
@@ -12,7 +12,7 @@ class App extends Component {
     auth: PropTypes.object,
   }
   componentDidMount() {
-    this.props.checkToken("fkdjfkdjf");
+    this.props.checkToken();
   }
   componentDidUpdate() {
 
@@ -34,6 +34,8 @@ const mapStateToProps = state => ({
   auth: state.auth.authenticated,
 });
 
-export default connect(mapStateToProps, {
-  checkToken,
-})(App);
+const mapDispatchToProps = dispatch => ({
+  checkToken: () => dispatch(AuthAction.checkToken()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
