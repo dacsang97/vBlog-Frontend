@@ -5,7 +5,6 @@ import logo from '../../assets/images/logo.svg';
 
 const Navbar = (props) => {
   const { auth: { guest, user } } = props;
-  console.log(props.location);
   return (
     <div>
       <div className="header">
