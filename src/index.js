@@ -6,6 +6,7 @@ import 'antd/dist/antd.less';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'animate.css/animate.css';
 import './assets/css/styles.scss';
+import './assets/css/user-avatar.scss';
 import './assets/css/simple-line-icons.scss';
 import Root from './containers/Root';
 import configureStore from './store/configureStore';

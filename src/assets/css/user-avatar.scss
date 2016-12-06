@@ -1,0 +1,124 @@
+.user-avatar-component {
+  display: flex;
+  align-items: center;
+  .avatar {
+    width: 30px;
+    span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 100%
+    }
+  }
+  .information {
+    margin-left: 10px;
+    .name {
+      font-size: 13px;
+      font-weight: 700;
+      color: #595959
+    }
+    .name-label {
+      font-size: 12px;
+      color: #bbb;
+      font-weight: 400
+    }
+  }
+  .size-20 {
+    .avatar {
+      width: 20px;
+      height: 20px;
+    }
+    .information {
+      margin-left: 5px;
+      .name-label {
+        margin-top: -2px;
+      }
+    }
+  }
+
+  .size-25 {
+    .avatar {
+      width: 25px;
+      height: 25px
+    }
+    .information {
+      .name-label {
+        margin-top: -2px;
+      }
+    }
+  }
+
+  .size-70 {
+    .avatar {
+      width: 70px;
+      height: 70px;
+      border-radius: 35px;
+      img {
+        border-radius: 35px
+      }
+    }
+    .name-label {
+      font-size: 14px
+    }
+    .name {
+      font-size: 20px
+    }
+    .avatar-component {
+      .character {
+        font-size: 35px
+      }
+    }
+  }
+  .text-white {
+    .name {
+      color: #fff
+    }
+    .name-label {
+      color: #e6e6e6
+    }
+  }
+}
+
+.avatar-component {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+  .character {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    span {
+      font-size: 20px;
+      font-weight: 600
+    }
+  }
+  img {
+    width: 100%;
+    border-radius: 5px
+  }
+  .overlay {
+    position: absolute;
+    background: rgba(0, 0, 0, .5);
+    top: 0;
+    left: 0;
+    height: 100%;
+    opacity: 0;
+    -webkit-transition: opacity .3s linear;
+    transition: opacity .3s linear;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff
+  }
+  &:hover {
+    cursor: pointer;
+    .overlay {
+      opacity: 1;
+    }
+  }
+}

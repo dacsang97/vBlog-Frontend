@@ -8,6 +8,10 @@ export function setTitle(title) {
   document.title = title;
 }
 
+export function splitName(name) {
+  return name.split(" ")[0][0];
+}
+
 export function renderField({ input, label, type, name, meta: { touched, error } }) {
   return (
     <FormGroup color={`${touched && error ? "danger" : ""}`}>

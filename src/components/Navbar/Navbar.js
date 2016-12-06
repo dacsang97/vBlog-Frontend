@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 import './navbar.scss';
 import logo from '../../assets/images/logo.svg';
+import UserInfo from './UserInfo';
 
 const Navbar = (props) => {
   const { auth: { guest, user } } = props;
@@ -27,7 +28,7 @@ const Navbar = (props) => {
               </Link> :
               user ?
                 <a href="#" className="a-menu">
-                  <h1>{user.display_name}</h1>
+                  <UserInfo user={user} />
                 </a>
                 : null
             }
