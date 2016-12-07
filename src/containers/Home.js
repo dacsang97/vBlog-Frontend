@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { TopMenu, Sidebar, ContentList } from '../components';
+import { TopMenu, Sidebar, ContentList, SearchCard, CategoryCard } from '../components';
 import WrapContainer from './WrapContainer';
 import { setTitle } from '../utils';
 
@@ -10,13 +10,16 @@ export default class Home extends Component {
   render() {
     return (
       <div className="v-wrap">
-        <div className="v-page">
-          <TopMenu />
-          <WrapContainer animatedIn="fadeIn">
+        <WrapContainer animatedIn="fadeIn">
+          <div className="v-page">
+            <TopMenu />
             <ContentList />
-          </WrapContainer>
-        </div>
-        <Sidebar />
+          </div>
+          <Sidebar>
+            <SearchCard />
+            <CategoryCard />
+          </Sidebar>
+        </WrapContainer>
       </div>
     );
   }

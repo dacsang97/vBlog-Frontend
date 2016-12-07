@@ -51,6 +51,15 @@
       .a-menu {
         @extend .a-menu;
       }
+
+      @media (max-width: 650px) {
+        .user-avatar-component {
+          .information {
+            display: none
+          }
+        }
+      }
+
     }
     .logo {
       width: 40%;

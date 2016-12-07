@@ -1,7 +1,7 @@
 /**
  * Created by sang on 12/6/16.
  */
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { browserHistory } from 'react-router';
 
@@ -10,6 +10,12 @@ export const REDIRECT_IF_AUTHENTICATED = 'redirect if authenticated';
 
 export function requireAuth(Component, redirectCheck = REDIRECT_IF_GUEST, redirect = '/login') {
   class AuthenticatedComponent extends React.Component {
+    componentDidMount() {
+      this.checkAuth(this.props.guest);
+    }
+    componentDidUpdate() {
+      this.checkAuth(this.props.guest);
+    }
     checkAuth(guest) {
       switch (redirectCheck) {
         case REDIRECT_IF_GUEST:
@@ -29,15 +35,8 @@ export function requireAuth(Component, redirectCheck = REDIRECT_IF_GUEST, redire
         default:
       }
     }
-    componentDidUpdate() {
-      this.checkAuth(this.props.guest);
-    }
-    componentDidMount() {
-      this.checkAuth(this.props.guest);
-    }
     render() {
       let component;
-      console.log(this.props.location);
       switch (redirectCheck) {
         case REDIRECT_IF_GUEST:
           component = !this.props.guest ? <Component {...this.props} /> : null;
@@ -56,8 +55,11 @@ export function requireAuth(Component, redirectCheck = REDIRECT_IF_GUEST, redire
   }
   const mapStateToProps = state => ({
     guest: state.auth.authenticated.guest,
-  })
-
+  });
+  AuthenticatedComponent.propTypes = {
+    guest: PropTypes.bool,
+    location: PropTypes.object,
+  };
   return connect(mapStateToProps)(AuthenticatedComponent);
 }
 

@@ -1,15 +1,17 @@
 /**
  * Created by sang on 11/28/16.
  */
-import React from 'react';
-import { SearchCard, CategoryCard } from '../';
+import React, { PropTypes } from 'react';
 
-const Sidebar = () => (
+const Sidebar = props => (
   <div className="v-sidebar">
-    <SearchCard />
-    <CategoryCard />
+    {props.children}
   </div>
 );
+
+Sidebar.propTypes = {
+  children: PropTypes.node,
+}
 
 
 export default Sidebar;

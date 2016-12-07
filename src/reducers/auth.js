@@ -34,7 +34,10 @@ export const failure = (state: Object, { error } : Object) =>
     error,
   });
 
-export const logout = () => INITIAL_STATE;
+export const logout = () => {
+  localStorage.clear();
+  return INITIAL_STATE;
+}
 
 export const checkToken = (state: Object) => state.merge({ fetching: true });
 

@@ -27,9 +27,9 @@ const Navbar = (props) => {
                 <i className="icon-login" />
               </Link> :
               user ?
-                <a href="#" className="a-menu">
+                <Link to="/profile" className="a-menu">
                   <UserInfo user={user} />
-                </a>
+                </Link>
                 : null
             }
           </div>
