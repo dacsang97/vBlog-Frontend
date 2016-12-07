@@ -14,9 +14,10 @@ import NavItemLink from './Navbar/NavItemLink';
 
 // Profile
 import ProfileCard from './Profile/ProfileCard';
+import ProfileForm from './Profile/ProfileForm';
 
 export { Icon, TopMenu, SearchCard, Sidebar,
   ContentList,
-  CategoryCard, ProfileCard,
+  CategoryCard, ProfileCard, ProfileForm,
   Navbar, NavItemLink,
 };

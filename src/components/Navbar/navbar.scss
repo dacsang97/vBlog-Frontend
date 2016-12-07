@@ -7,7 +7,7 @@
 .header {
   height: 40px;
   width: 100%;
-  background: #fff;
+  background-color: #00A388;
   box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
   .headerContainer {
     display: flex;
@@ -23,7 +23,7 @@
       justify-content: flex-start;
       a {
         font-size: 22px;
-        color: #37b2ad;
+        color: #fff;
       }
       a:hover {
         text-decoration: none;
@@ -41,6 +41,7 @@
       justify-content: flex-end;
       a {
         font-size: 22px;
+        color: #fff;
       }
       a:hover {
         text-decoration: none;
@@ -69,12 +70,12 @@
       align-items: center;
       a {
         font-size: 18px;
-        color: #505050;
+        color: #eeeeee;
         transition: color 0.5s linear;
       }
       a:hover {
         text-decoration: none;
-        color: #4c8272;
+        color: #fff;
       }
       a:focus {
         text-decoration: none;

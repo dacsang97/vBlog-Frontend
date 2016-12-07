@@ -2,41 +2,60 @@
  * Created by sang on 12/6/16.
  */
 import React, { PropTypes } from 'react';
-import { Sidebar, ProfileCard, CategoryCard } from '../components';
+import { Card, CardBlock } from 'reactstrap';
+import { connect } from 'react-redux';
+import { reduxForm } from 'redux-form';
+import { Sidebar, ProfileCard, CategoryCard, ProfileForm } from '../components';
 import WrapContainer from './WrapContainer';
 
-class Profile extends React.Component {
-  componentDidMount() {
-
+class ProfileContainer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.onSubmit = this.onSubmit.bind(this);
   }
   getChildContext() {
     return {
       location: this.props.location,
     }
   }
+  onSubmit(e) {
+    console.log(e);
+  }
   render() {
     return (
       <div className="v-wrap">
         <WrapContainer animatedIn="fadeIn">
           <div className="v-page">
-            <h1>Đây là trang cá nhân</h1>
+            <Card>
+              <CardBlock>
+                <ProfileForm onSubmit={this.onSubmit} {...this.props} />
+              </CardBlock>
+            </Card>
           </div>
           <Sidebar>
-            <ProfileCard x="1" />
+            <ProfileCard />
             <CategoryCard />
           </Sidebar>
         </WrapContainer>
       </div>
-    )
+    );
   }
 }
 
-Profile.childContextTypes = {
+ProfileContainer.childContextTypes = {
   location: PropTypes.object,
-}
+};
 
-Profile.propTypes = {
+ProfileContainer.propTypes = {
   location: PropTypes.object,
-}
+};
+
+const mapStateToProps = state => ({
+  initialValues: state.auth.authenticated.user,
+});
+
+const Profile = connect(mapStateToProps)(reduxForm({
+  form: 'Profile',
+})(ProfileContainer));
 
 export default Profile;

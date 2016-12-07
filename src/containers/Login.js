@@ -17,7 +17,6 @@ class LoginContainer extends Component {
     setTitle("Login");
   }
   onSubmit(e) {
-    console.log(e);
     const { email, password } = e;
     this.props.attemptLogin(email, password);
   }

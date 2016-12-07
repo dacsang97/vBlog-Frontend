@@ -12,7 +12,8 @@ export function splitName(name) {
   return name.split(" ")[0][0];
 }
 
-export function renderField({ input, label, type, name, meta: { touched, error } }) {
+export function renderField(props) {
+  const { input, label, type, name, meta: { touched, error } } = props;
   return (
     <FormGroup color={`${touched && error ? "danger" : ""}`}>
       <Label for={name}>{label}</Label>
@@ -30,4 +31,4 @@ renderField.propTypes = {
   type: PropTypes.string,
   name: PropTypes.string,
   meta: PropTypes.object,
-}
+};

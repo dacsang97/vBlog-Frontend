@@ -6,11 +6,10 @@ import { splitName } from '../../utils';
 
 const UserInfo = (props) => {
   const user = props.user;
-  console.log(splitName(user.display_name));
   return (
     <div>
       <div className="user-avatar-component size-25">
-        <div className="avatar avatar-component character" style={{ backgroundColor: 'rgb(211, 84, 0)' }}>
+        <div className="avatar avatar-component character" style={{ backgroundColor: '#FF6138' }}>
           <span>
             <span className="character">
               {splitName(user.display_name)}
