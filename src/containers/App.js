@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { Container } from 'reactstrap';
+import { Grid } from 'react-bootstrap';
 // import { browserHistory } from 'react-router';
 import Navbar from '../components/Navbar/Navbar';
 import AuthAction from '../actions/auth';
@@ -22,9 +22,9 @@ class App extends Component {
     return (
       <div>
         <Navbar auth={this.props.auth} />
-        <Container>
+        <Grid>
           {children}
-        </Container>
+        </Grid>
       </div>
     );
   }

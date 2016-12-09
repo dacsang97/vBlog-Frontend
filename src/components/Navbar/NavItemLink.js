@@ -2,8 +2,8 @@
  * Created by sang on 12/7/16.
  */
 import React, { Component, PropTypes } from 'react';
-import { NavItem } from 'reactstrap';
-import { Link } from 'react-router';
+import { NavItem } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 import classNames from 'classnames';
 
 class NavItemLink extends Component {
@@ -23,9 +23,9 @@ class NavItemLink extends Component {
   render() {
     const { info, link } = this.props;
     return (
-      <NavItem className={this.getClass()}>
-        <Link to={link}>{info}</Link>
-      </NavItem>
+      <LinkContainer to={link}>
+        <NavItem>{info}</NavItem>
+      </LinkContainer>
     );
   }
 }

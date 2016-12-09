@@ -2,27 +2,27 @@
  * Created by sang on 11/28/16.
  */
 import React, { Component } from 'react';
-import { Card, Input } from 'antd';
+import { Panel, FormControl, FormGroup, InputGroup } from 'react-bootstrap';
 import { Icon } from '../';
 
-const Search = Input.Search;
-
 class SearchCard extends Component {
-  renderHeader() {
-    return (
-      <h6>
-        <Icon name="icon-magnifier" /> Tìm kiếm
-      </h6>
-    );
+  componentDidMount() {
+
   }
   render() {
     return (
-      <Card className="widget">
-        <Search placeholder="Tìm kiếm" onSearch={value => console.log(value)} style={{ width: '100%' }} />
-      </Card>
+      <Panel header="Tìm kiếm">
+        <form>
+          <FormGroup>
+            <InputGroup>
+              <InputGroup.Addon><Icon name="icon-magnifier" /></InputGroup.Addon>
+              <FormControl type="text" placeholder="Tìm kiếm" />
+            </InputGroup>
+          </FormGroup>
+        </form>
+      </Panel>
     );
   }
 }
-
 
 export default SearchCard;

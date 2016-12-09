@@ -1,4 +1,6 @@
 @import 'OpenSans.css';
+@import './variables';
+@import './partials/header';
 
 body {
   background-color: #f6f6f6 !important;
@@ -14,12 +16,13 @@ body {
     width: calc(100% - 290px);
 
     .content-list {
-      margin-left: -10px;
-      margin-right: -10px;
+      margin-top: 10px;
+      margin-left: -5px;
+      margin-right: -5px;
     }
     .content-item-wrap {
-      width: 50%;
-      padding: 10px;
+      padding-left: 5px;
+      padding-right: 5px;
 
       .content-item {
         box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
@@ -56,6 +59,17 @@ body {
   line-height: 48px !important;
 }
 
-label {
-  font-size: 1rem;
+.v-content-para {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  &:first-child {
+    margin-top: 0;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+  .author {
+    font-weight: 600;
+    color: #FD7400;
+  }
 }

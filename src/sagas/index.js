@@ -4,9 +4,11 @@
 
 /* ------- Sagas ------- */
 import LoginSaga from './Login';
+import PostSaga from './Post';
 
 export default function* root() {
   yield [
     LoginSaga(),
+    PostSaga(),
   ];
 }

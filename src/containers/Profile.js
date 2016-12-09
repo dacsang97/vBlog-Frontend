@@ -2,10 +2,10 @@
  * Created by sang on 12/6/16.
  */
 import React, { PropTypes } from 'react';
-import { Card, CardBlock } from 'reactstrap';
+import { Panel } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { reduxForm } from 'redux-form';
-import { Sidebar, ProfileCard, CategoryCard, ProfileForm } from '../components';
+import { Sidebar, ProfileForm, ProfileCard } from '../components';
 import WrapContainer from './WrapContainer';
 
 class ProfileContainer extends React.Component {
@@ -26,15 +26,12 @@ class ProfileContainer extends React.Component {
       <div className="v-wrap">
         <WrapContainer animatedIn="fadeIn">
           <div className="v-page">
-            <Card>
-              <CardBlock>
-                <ProfileForm onSubmit={this.onSubmit} {...this.props} />
-              </CardBlock>
-            </Card>
+            <Panel>
+              <ProfileForm onSubmit={this.onSubmit} {...this.props} />
+            </Panel>
           </div>
           <Sidebar>
             <ProfileCard />
-            <CategoryCard />
           </Sidebar>
         </WrapContainer>
       </div>

@@ -55,10 +55,10 @@
     "whatwg-fetch": "1.0.0"
   },
   "dependencies": {
+    "@blueprintjs/core": "^1.2.0",
     "animate.css": "^3.5.2",
-    "antd": "^2.5.0",
     "axios": "^0.15.3",
-    "bootstrap": "4.0.0-alpha.5",
+    "bootstrap-sass": "^3.3.7",
     "classnames": "^2.2.5",
     "humps": "^1.1.0",
     "jwt-decode": "^2.1.0",
@@ -67,12 +67,13 @@
     "react": "^15.4.1",
     "react-addons-css-transition-group": "^15.4.1",
     "react-addons-transition-group": "^15.4.1",
+    "react-bootstrap": "^0.30.7",
     "react-dom": "^15.4.1",
     "react-masonry-component": "^4.4.0",
     "react-redux": "^4.4.5",
     "react-router": "^2.6.1",
+    "react-router-bootstrap": "^0.23.1",
     "react-router-redux": "^4.0.5",
-    "reactstrap": "^3.9.1",
     "redux": "^3.5.2",
     "redux-devtools": "^3.3.1",
     "redux-devtools-dock-monitor": "^1.1.1",
@@ -83,6 +84,7 @@
     "redux-thunk": "^2.1.0",
     "reduxsauce": "^0.2.0",
     "seamless-immutable": "^6.3.0",
+    "sweetalert-react": "^0.4.6",
     "validator": "^6.2.0"
   },
   "scripts": {

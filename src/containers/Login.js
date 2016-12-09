@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { reduxForm } from 'redux-form';
-import { Row, Col, Card, CardBlock } from 'reactstrap';
+import { Row, Col, Panel } from 'react-bootstrap';
 import validator from 'validator';
 import LoginForm from '../components/LoginForm/LoginForm';
 import { setTitle } from '../utils';
@@ -24,16 +24,14 @@ class LoginContainer extends Component {
     return (
       <Row style={{ marginTop: 60 }}>
         <Col
-          xs={{ size: 12 }}
-          md={{ size: 8, offset: 2 }}
-          sm={{ size: 10, offset: 1 }}
+          xs={12}
+          md={8} mdOffset={2}
+          sm={10} smOffset={1}
         >
           <WrapContainer animatedIn="fadeIn">
-            <Card>
-              <CardBlock>
-                <LoginForm {...this.props} onSubmit={this.onSubmit} />
-              </CardBlock>
-            </Card>
+            <Panel>
+              <LoginForm {...this.props} onSubmit={this.onSubmit} />
+            </Panel>
           </WrapContainer>
 
         </Col>

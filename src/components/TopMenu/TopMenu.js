@@ -2,18 +2,14 @@
  * Created by sang on 11/28/16.
  */
 import React from 'react';
-import { Menu } from 'antd';
-import { Icon } from '../';
+import { Tabs, Tab } from 'react-bootstrap';
 
 const TopMenu = () => (
-  <Menu mode="horizontal">
-    <Menu.Item key="new-feed">
-      <Icon name="icon-feed" /> Mới nhất
-    </Menu.Item>
-    <Menu.Item key="popular">
-      <Icon name="icon-chart" /> Nổi bật
-    </Menu.Item>
-  </Menu>
+  <Tabs defaultActiveKey={2} id="uncontrolled-tab-example">
+    <Tab eventKey={1} title="Tab 1">Tab 1 content</Tab>
+    <Tab eventKey={2} title="Tab 2">Tab 2 content</Tab>
+    <Tab eventKey={3} title="Tab 3" disabled>Tab 3 content</Tab>
+  </Tabs>
 );
 
 

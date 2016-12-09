@@ -1,47 +1,42 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
+import { LinkContainer } from 'react-router-bootstrap';
+import { Navbar, Nav, NavItem } from 'react-bootstrap';
 import './navbar.scss';
 import logo from '../../assets/images/logo.svg';
 import UserInfo from './UserInfo';
 
-const Navbar = (props) => {
+const VNavbar = (props) => {
   const { auth: { guest, user } } = props;
   return (
-    <div>
-      <div className="header">
-        <div className="headerContainer">
-          <div className="left">
-            <Link to="#" className="a-menu">
-              <i className="icon-menu" />
-            </Link>
-          </div>
-          <div className="logo">
-            <Link to="/" className="a-menu">
-              <img src={logo} width="50" height="30" className="d-inline-block align-top" alt="" />
-              Blog
-            </Link>
-          </div>
-          <div className="right">
-            { guest ?
-              <Link to="/login" className="a-menu">
-                <i className="icon-login" />
-              </Link> :
-              user ?
-                <Link to="/profile" className="a-menu">
-                  <UserInfo user={user} />
-                </Link>
-                : null
-            }
-          </div>
-        </div>
-      </div>
-    </div>
+    <Navbar className="v-navbar">
+      <Navbar.Header>
+        <Navbar.Brand>
+          <Link to="/">
+            <img src={logo} width="35" height="35" alt="VBlog" />
+          </Link>
+        </Navbar.Brand>
+        <Navbar.Toggle />
+      </Navbar.Header>
+      <Navbar.Collapse>
+        <Nav>
+          <NavItem eventKey={1} href="https://github.com/dacsang97/">Github</NavItem>
+          <NavItem eventKey={2} href="#">Facebook</NavItem>
+        </Nav>
+        <Nav pullRight>
+          { guest ?
+            <LinkContainer to="/login"><NavItem>Đăng nhập</NavItem></LinkContainer> :
+            user ? <Link to="/profile"><UserInfo user={user} /></Link> : null
+          }
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
   );
 }
 
-Navbar.propTypes = {
+VNavbar.propTypes = {
   auth: PropTypes.object,
 }
 
-export default Navbar;
+export default VNavbar;
 
