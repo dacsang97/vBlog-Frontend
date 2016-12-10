@@ -18,7 +18,7 @@ export function quote(string, length = 15) {
   let result = "";
   let count = 0;
   while (true) {
-    const temp = result + words[count];
+    const temp = `${result} ${words[count]}`;
     if (temp.length < length) {
       result = temp;
       count += 1;
