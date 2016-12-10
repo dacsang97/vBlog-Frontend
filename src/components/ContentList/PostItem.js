@@ -18,7 +18,7 @@ const PostItem = (props) => {
           </Media.Left>
           <Media.Body>
             <Media.Heading style={{ color: "#1F8A70", borderBottom: "1px solid #dedede", paddingBottom: '5px' }}>
-              {quote(post.title, 20)}
+              {quote(post.title, 30)}
             </Media.Heading>
             <p className="v-content-para">{quote(post.content, 200)}</p>
             <p className="v-content-para">Posted by <span className="author">{author.display_name}</span> {post.released}</p>

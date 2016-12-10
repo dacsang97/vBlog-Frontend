@@ -29,9 +29,6 @@ class ContentList extends Component {
             (
               <Masonry options={{ transitionDuration: 700 }}>
                 {posts}
-                {posts}
-                {posts}
-                {posts}
               </Masonry>
             )
           }
