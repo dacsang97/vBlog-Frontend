@@ -4,8 +4,8 @@
 import React, { PropTypes } from 'react';
 import moment from 'moment';
 import { Panel, Col, Media } from 'react-bootstrap';
+import { PostTitle, UserAvatar } from './partial';
 import { createHtml } from '../../utils';
-import avatar from '../../assets/images/avatar.png';
 
 const PostItem = (props) => {
   const { post, author } = props;
@@ -15,11 +15,11 @@ const PostItem = (props) => {
       <Panel style={{ marginBottom: 15 }}>
         <Media>
           <Media.Left>
-            <img width={35} height={35} src={avatar} style={{ borderRadius: '500rem' }} alt="vteam" />
+            <UserAvatar author={author} />
           </Media.Left>
           <Media.Body>
             <Media.Heading style={{ color: "#1F8A70", borderBottom: "1px solid #dedede", paddingBottom: '5px' }}>
-              {post.title.rendered}
+              <PostTitle title={post.title.rendered} slug={post.slug} />
             </Media.Heading>
             <div dangerouslySetInnerHTML={createHtml(post.excerpt.rendered)} />
             <p className="v-content-para">Posted by <span className="author">{author.name}</span> {date}</p>

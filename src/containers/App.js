@@ -3,16 +3,15 @@ import { connect } from 'react-redux';
 import { Grid } from 'react-bootstrap';
 // import { browserHistory } from 'react-router';
 import Navbar from '../components/Navbar/Navbar';
-import AuthAction from '../actions/auth';
 
 class App extends Component {
   static propTypes = {
     children: PropTypes.node,
-    checkToken: PropTypes.func,
+    getPreData: PropTypes.func,
     auth: PropTypes.object,
   }
   componentDidMount() {
-    this.props.checkToken();
+    this.props.getPreData();
   }
   componentDidUpdate() {
 
@@ -35,7 +34,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  checkToken: () => dispatch(AuthAction.checkToken()),
+  getPreData: () => dispatch({ type: 'GET_PRE_DATA' }),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

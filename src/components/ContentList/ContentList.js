@@ -13,6 +13,9 @@ class ContentList extends Component {
     super(props);
     this.renderPost = this.renderPost.bind(this);
   }
+  componentDidMount() {
+
+  }
   renderPost() {
     const { posts, users } = this.props;
     return posts.map((item, id) => {
@@ -52,5 +55,6 @@ const mapStateToProps = state => ({
   users: state.users.users,
   fetching: state.users.fetching,
 });
+
 
 export default connect(mapStateToProps)(ContentList);
