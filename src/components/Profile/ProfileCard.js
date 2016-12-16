@@ -12,7 +12,7 @@ class ProfileCard extends Component {
   render() {
     return (
       <Panel className="widget" header="Profile">
-        <Nav>
+        <Nav bsStyle="pills" stacked>
           <NavItemLink info="Thông tin cá nhân" link="/profile" />
           <NavItemLink info="Thay đổi mật khẩu" link="/change-password" />
           <NavItemLink info="Đăng xuất" link="/logout" />

@@ -2,13 +2,14 @@
  * Created by sang on 12/7/16.
  */
 import React, { PropTypes } from 'react';
+import moment from 'moment';
 import { Panel, Col, Media } from 'react-bootstrap';
-import { quote } from '../../utils';
+import { createHtml } from '../../utils';
 import avatar from '../../assets/images/avatar.png';
 
 const PostItem = (props) => {
-  const post = props.post;
-  const author = props.post.author.data;
+  const { post, author } = props;
+  const date = moment(post.date).fromNow();
   return (
     <Col md={6} xs={12} className="content-item-wrap">
       <Panel style={{ marginBottom: 15 }}>
@@ -18,10 +19,10 @@ const PostItem = (props) => {
           </Media.Left>
           <Media.Body>
             <Media.Heading style={{ color: "#1F8A70", borderBottom: "1px solid #dedede", paddingBottom: '5px' }}>
-              {quote(post.title, 30)}
+              {post.title.rendered}
             </Media.Heading>
-            <p className="v-content-para">{quote(post.content, 200)}</p>
-            <p className="v-content-para">Posted by <span className="author">{author.display_name}</span> {post.released}</p>
+            <div dangerouslySetInnerHTML={createHtml(post.excerpt.rendered)} />
+            <p className="v-content-para">Posted by <span className="author">{author.name}</span> {date}</p>
           </Media.Body>
         </Media>
       </Panel>
@@ -31,6 +32,7 @@ const PostItem = (props) => {
 
 PostItem.propTypes = {
   post: PropTypes.object.isRequired,
+  author: PropTypes.object.isRequired,
 };
 
 export default PostItem;

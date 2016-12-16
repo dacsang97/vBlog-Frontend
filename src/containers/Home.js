@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { Tabs, Tab } from 'react-bootstrap';
 import { Sidebar, ContentList, SearchCard, CategoryCard, Icon } from '../components';
 import WrapContainer from './WrapContainer';
-import PostsActions from '../actions/posts';
 import { setTitle } from '../utils';
 
 const Tab1Title = () => (
@@ -17,7 +16,7 @@ const Tab2Title = () => (
 class Home extends Component {
   componentDidMount() {
     setTitle('Trang chủ');
-    this.props.getAllPost();
+    this.props.getPreData();
   }
   render() {
     return (
@@ -42,11 +41,11 @@ class Home extends Component {
 }
 
 Home.propTypes = {
-  getAllPost: PropTypes.func,
+  getPreData: PropTypes.func,
 }
 
 const mapDispatchToProps = dispatch => ({
-  getAllPost: () => dispatch(PostsActions.loadAllPostRequest()),
+  getPreData: () => dispatch({ type: 'GET_PRE_DATA' }),
 });
 
 export default connect(null, mapDispatchToProps)(Home);

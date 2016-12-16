@@ -14,18 +14,21 @@ class ContentList extends Component {
     this.renderPost = this.renderPost.bind(this);
   }
   renderPost() {
-    const { posts } = this.props;
-    return posts.map((item, id) => (
-      <PostItem key={id} post={item} />
-    ));
+    const { posts, users } = this.props;
+    return posts.map((item, id) => {
+      const author = users[item.author - 1];
+      return (
+        <PostItem key={id} post={item} author={author} />
+      );
+    });
   }
   render() {
-    const posts = this.props.posts ? this.renderPost() : null;
+    const posts = !this.props.fetching ? this.renderPost() : null;
     return (
       <Row className="content-list">
         <WrapContainer animatedIn="fadeIn" animatedOut="zoomOut">
-          { !this.props.posts && <h1>Loading</h1>}
-          { this.props.posts &&
+          { this.props.fetching && <h1>Loading</h1>}
+          { !this.props.fetching &&
             (
               <Masonry options={{ transitionDuration: 700 }}>
                 {posts}
@@ -40,10 +43,14 @@ class ContentList extends Component {
 
 ContentList.propTypes = {
   posts: PropTypes.array,
+  users: PropTypes.array,
+  fetching: PropTypes.bool,
 };
 
 const mapStateToProps = state => ({
-  posts: state.posts.posts.data,
+  posts: state.posts.posts,
+  users: state.users.users,
+  fetching: state.users.fetching,
 });
 
 export default connect(mapStateToProps)(ContentList);

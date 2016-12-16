@@ -8,7 +8,7 @@ const BASE_URL = env.BASE_URL;
 
 export default class PostApi {
   static loadAllPost() {
-    const url = `${BASE_URL}/posts?include=author`;
+    const url = `${BASE_URL}/posts`;
     return axios.get(url);
   }
 }

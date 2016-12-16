@@ -4,6 +4,7 @@
 import React, { Component } from 'react';
 import { Panel, Nav, NavItem } from 'react-bootstrap';
 import SweetAlert from 'sweetalert-react';
+import { Icon } from '../';
 import constructorImage from '../../assets/images/constructor.png';
 
 class CategoryCard extends Component {
@@ -23,13 +24,14 @@ class CategoryCard extends Component {
     })
   }
   render() {
+    const header = (<h3><Icon name="icon-directions" /> Chuyên mục</h3>);
     return (
-      <Panel className="widget" header="Chuyên mục">
-        <Nav>
-          <NavItem onClick={this.onClick}>Web</NavItem>
-          <NavItem onClick={this.onClick}>Android</NavItem>
-          <NavItem onClick={this.onClick}>iOS</NavItem>
-          <NavItem onClick={this.onClick}>Design UI/UX</NavItem>
+      <Panel header={header}>
+        <Nav onSelect={this.onClick}>
+          <NavItem>Web</NavItem>
+          <NavItem>Android</NavItem>
+          <NavItem>iOS</NavItem>
+          <NavItem>Design UI/UX</NavItem>
         </Nav>
         <SweetAlert
           show={this.state.show}

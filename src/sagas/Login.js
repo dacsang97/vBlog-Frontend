@@ -12,7 +12,8 @@ export function* login({ email, password }) {
     const payload = response.data;
     yield put({ type: types.LOGIN_SUCCESS, payload });
   } catch (error) {
-    yield put({ type: types.LOGIN_FAILURE, error });
+    const errors = error.response.data;
+    yield put({ type: types.LOGIN_FAILURE, errors });
   }
 }
 

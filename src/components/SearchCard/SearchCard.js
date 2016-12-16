@@ -10,8 +10,9 @@ class SearchCard extends Component {
 
   }
   render() {
+    const header = (<h3><Icon name="icon-magnifier" /> Tìm kiếm</h3>);
     return (
-      <Panel header="Tìm kiếm">
+      <Panel header={header}>
         <form>
           <FormGroup>
             <InputGroup>

@@ -30,6 +30,10 @@ export function quote(string, length = 15) {
   return result;
 }
 
+export function createHtml(content) {
+  return { __html: content };
+}
+
 export function renderField(props) {
   const { input, label, type, name, meta: { touched, error } } = props;
   const status = (touched && error) ? 'error' : null;
