@@ -2,30 +2,23 @@
  * Created by sang on 12/7/16.
  */
 import React, { PropTypes } from 'react';
-import moment from 'moment';
-import { Panel, Col, Media } from 'react-bootstrap';
-import { PostTitle, UserAvatar } from './partial';
-import { createHtml } from '../../utils';
+import { Col } from 'react-bootstrap';
+import { CardHeader, CardDate, CardBody, CardFooter } from './partial';
 
 const PostItem = (props) => {
-  const { post, author } = props;
-  const date = moment(post.date).fromNow();
+  const { date, featured_image: image, title, excerpt, slug } = props.post;
+  const { author } = props;
   return (
     <Col md={4} sm={6} xs={12} className="content-item-wrap">
-      <Panel style={{ marginBottom: 15 }}>
-        <Media>
-          <Media.Left>
-            <UserAvatar author={author} />
-          </Media.Left>
-          <Media.Body>
-            <Media.Heading style={{ color: "#1F8A70", borderBottom: "1px solid #dedede", paddingBottom: '5px' }}>
-              <PostTitle post={post} author={author} />
-            </Media.Heading>
-            <div dangerouslySetInnerHTML={createHtml(post.excerpt.rendered)} />
-            <p className="v-content-para">Posted by <span className="author">{author.name}</span> {date}</p>
-          </Media.Body>
-        </Media>
-      </Panel>
+      <div className="card">
+        <CardHeader image={image} />
+        <CardDate date={date} />
+        <CardBody
+          title={title} excerpt={excerpt} slug={slug}
+          author={author}
+        />
+        <CardFooter date={date} />
+      </div>
     </Col>
   );
 };

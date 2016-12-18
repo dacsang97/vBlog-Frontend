@@ -8,7 +8,7 @@ import { redirectIfAuthenticated, redirectIfGuest } from './middleware/requireAu
 export default (
   <Route path="/" component={App}>
     <IndexRoute component={Home} />
-    <Route path="/post">
+    <Route path="/posts">
       <IndexRoute component={Home} />
       <Route path=":postSlug" component={PostView} />
     </Route>

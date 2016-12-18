@@ -7,11 +7,10 @@ import Navbar from '../components/Navbar/Navbar';
 class App extends Component {
   static propTypes = {
     children: PropTypes.node,
-    getPreData: PropTypes.func,
     auth: PropTypes.object,
   }
   componentDidMount() {
-    this.props.getPreData();
+
   }
   componentDidUpdate() {
 
@@ -33,8 +32,5 @@ const mapStateToProps = state => ({
   auth: state.auth.authenticated,
 });
 
-const mapDispatchToProps = dispatch => ({
-  getPreData: () => dispatch({ type: 'GET_PRE_DATA' }),
-});
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps)(App);
