@@ -18,6 +18,7 @@ import ProfileForm from './Profile/ProfileForm';
 
 // Home
 import CoverImage from './CoverImage';
+import Loading from './Loading';
 
 // PostView
 import PostView from './PostView/PostView';
@@ -28,4 +29,5 @@ export { Icon, TopMenu, SearchCard, Sidebar,
   Navbar, NavItemLink,
   CoverImage,
   PostView,
+  Loading,
 };

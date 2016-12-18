@@ -23,12 +23,31 @@ export const loadAllUsersSuccess = (state: Object, { users } : Object) =>
 export const loadAllUsersFailure = (state: Object, { errors } : Object) =>
   state.merge({
     errors,
+    fetching: false,
+  });
+
+export const loadUserRequest = (state: Object) =>
+  state.merge({ fetching: true });
+
+export const loadUserSuccess = (state: Object, { currentUser } : Object) =>
+  state.merge({
+    currentUser,
+    fetching: false,
+  });
+
+export const loadUserFailure = (state: Object, { errors } : Object) =>
+  state.merge({
+    errors,
+    fetching: false,
   });
 
 const reducer = createReducer(INITIAL_STATE, {
   [types.LOAD_ALL_USERS_REQUEST]: loadAllUsersRequest,
   [types.LOAD_ALL_USERS_SUCCESS]: loadAllUsersSuccess,
   [types.LOAD_ALL_USERS_FAILURE]: loadAllUsersFailure,
+  [types.LOAD_USER_REQUEST]: loadUserRequest,
+  [types.LOAD_USER_SUCCESS]: loadUserSuccess,
+  [types.LOAD_USER_FAILURE]: loadUserFailure,
 });
 
 export default reducer;

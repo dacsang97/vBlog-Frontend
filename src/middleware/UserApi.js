@@ -10,6 +10,9 @@ class UserApi {
   static loadAllUser() {
     return axios.get(`${BASE_URL}/users`);
   }
+  static loadUserId(id) {
+    return axios.get(`${BASE_URL}/users/${id}`);
+  }
 }
 
 export default UserApi;

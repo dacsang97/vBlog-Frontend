@@ -5,12 +5,14 @@
 /* ------- Sagas ------- */
 import LoginSaga from './Login';
 import PostSaga from './Post';
+import UserSaga from './User';
 import LoadPreDataSaga from './PreData';
 
 export default function* root() {
   yield [
     LoginSaga(),
     PostSaga(),
+    UserSaga(),
     LoadPreDataSaga(),
   ];
 }

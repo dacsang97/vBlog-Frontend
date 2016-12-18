@@ -3,6 +3,7 @@
  */
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
+import { Image } from 'react-bootstrap';
 import { createHtml } from '../../../utils';
 
 const CardBody = (props) => {
@@ -18,7 +19,7 @@ const CardBody = (props) => {
         </Link>
       </h2>
       <div className="card__subtitle">
-        <span className="UserAvatar" style={{ backgroundImageUrl: 'https://up.quizlet.com/41lhs-Sp7WA-256s.jpg', height: '16px', width: '16px' }} />{author.name}
+        <Image src={author.avatar_urls["24"]} circle /> {author.name}
       </div>
       <div className="card__description" dangerouslySetInnerHTML={createHtml(excerpt)} />
     </div>
@@ -29,6 +30,7 @@ CardBody.propTypes = {
   title: PropTypes.string.isRequired,
   excerpt: PropTypes.string.isRequired,
   slug: PropTypes.string.isRequired,
-}
+  author: PropTypes.object.isRequired,
+};
 
 export default CardBody;

@@ -6,5 +6,6 @@ import App from './App';
 import Login from './Login';
 import Logout from './Logout';
 import PostView from './PostView';
+import NotFound from './NotFound';
 
-export { Home, App, Login, Logout, PostView };
+export { Home, App, Login, Logout, PostView, NotFound };

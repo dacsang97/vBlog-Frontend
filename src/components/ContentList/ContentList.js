@@ -6,6 +6,7 @@ import { Row } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import Masonry from 'react-masonry-component';
 import WrapContainer from '../../containers/WrapContainer';
+import { Loading } from '../';
 import PostItem from './PostItem';
 
 class ContentList extends Component {
@@ -30,7 +31,7 @@ class ContentList extends Component {
     return (
       <Row className="content-list">
         <WrapContainer animatedIn="fadeIn" animatedOut="zoomOut">
-          { this.props.fetching && <h1>Loading</h1>}
+          { this.props.fetching && <Loading />}
           { !this.props.fetching &&
             (
               <Masonry options={{ transitionDuration: 700 }}>
