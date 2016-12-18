@@ -1,9 +1,10 @@
 @import 'OpenSans.css';
 @import './variables';
 @import './partials/header';
+@import './partials/card_item';
 
 body {
-  background-color: #f6f6f6 !important;
+  background-color: #fafafa !important;
   font-family: 'Open Sans', sans-serif !important;
   font-size: 14px;
   font-weight: 400;
@@ -12,8 +13,8 @@ body {
 .v-wrap {
   margin-top: 20px;
   .v-page {
-    float: left;
-    width: calc(100% - 290px);
+    float: right;
+    width: calc(100% - 245px);
 
     .content-list {
       margin-top: 10px;
@@ -29,16 +30,11 @@ body {
         height: 100%
       }
     }
-    @media (max-width: 989px) {
-      .content-item-wrap {
-        width: 100%
-      }
-    }
   }
 
   .v-sidebar {
-    float: right;
-    width: 280px;
+    float: left;
+    width: 235px;
 
     .widget {
       width: 100%;
@@ -53,10 +49,6 @@ body {
       display: none;
     }
   }
-}
-
-.ant-card-head h6 {
-  line-height: 48px !important;
 }
 
 .v-content-para {

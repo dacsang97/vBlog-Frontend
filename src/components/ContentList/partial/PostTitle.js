@@ -5,18 +5,17 @@ import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 
 const PostTitle = (props) => {
-  const { title, slug } = props;
+  const { title, slug } = props.post;
   const link = `/post/${slug}`;
   return (
-    <Link to={link}>
-      {title}
+    <Link to={{ pathname: link, state: props }}>
+      {title.rendered}
     </Link>
   );
 }
 
 PostTitle.propTypes = {
-  title: PropTypes.string.isRequired,
-  slug: PropTypes.string.isRequired,
-}
+  post: PropTypes.object.isRequired,
+};
 
 export default PostTitle;

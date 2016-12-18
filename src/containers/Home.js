@@ -20,18 +20,16 @@ class Home extends Component {
     return (
       <div className="v-wrap">
         <WrapContainer animatedIn="fadeIn">
+          <Sidebar>
+            <SearchCard />
+            <CategoryCard />
+          </Sidebar>
           <div className="v-page">
             <Tabs defaultActiveKey={1} id="uncontrolled-tab-example">
               <Tab eventKey={1} title={<Tab1Title />}><ContentList /></Tab>
               <Tab eventKey={2} title={<Tab2Title />}>Tính năng đang phát triển</Tab>
             </Tabs>
           </div>
-          <WrapContainer animatedOut="fadeOut">
-            <Sidebar>
-              <SearchCard />
-              <CategoryCard />
-            </Sidebar>
-          </WrapContainer>
         </WrapContainer>
       </div>
     );

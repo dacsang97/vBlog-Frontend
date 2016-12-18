@@ -19,7 +19,7 @@ class ContentList extends Component {
   renderPost() {
     const { posts, users } = this.props;
     return posts.map((item, id) => {
-      const author = users[item.author - 1];
+      const author = users[item.author.id - 1];
       return (
         <PostItem key={id} post={item} author={author} />
       );

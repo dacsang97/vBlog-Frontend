@@ -11,7 +11,7 @@ const PostItem = (props) => {
   const { post, author } = props;
   const date = moment(post.date).fromNow();
   return (
-    <Col md={6} xs={12} className="content-item-wrap">
+    <Col md={4} sm={6} xs={12} className="content-item-wrap">
       <Panel style={{ marginBottom: 15 }}>
         <Media>
           <Media.Left>
@@ -19,7 +19,7 @@ const PostItem = (props) => {
           </Media.Left>
           <Media.Body>
             <Media.Heading style={{ color: "#1F8A70", borderBottom: "1px solid #dedede", paddingBottom: '5px' }}>
-              <PostTitle title={post.title.rendered} slug={post.slug} />
+              <PostTitle post={post} author={author} />
             </Media.Heading>
             <div dangerouslySetInnerHTML={createHtml(post.excerpt.rendered)} />
             <p className="v-content-para">Posted by <span className="author">{author.name}</span> {date}</p>

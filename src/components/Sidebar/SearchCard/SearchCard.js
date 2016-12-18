@@ -3,7 +3,7 @@
  */
 import React, { Component } from 'react';
 import { Panel, FormControl, FormGroup, InputGroup } from 'react-bootstrap';
-import { Icon } from '../';
+import { Icon } from '../../';
 
 class SearchCard extends Component {
   componentDidMount() {

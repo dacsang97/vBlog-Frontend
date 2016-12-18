@@ -4,8 +4,8 @@
 import React, { Component } from 'react';
 import { Panel, Nav, NavItem } from 'react-bootstrap';
 import SweetAlert from 'sweetalert-react';
-import { Icon } from '../';
-import constructorImage from '../../assets/images/constructor.png';
+import { Icon } from '../../';
+import constructorImage from '../../../assets/images/constructor.png';
 
 class CategoryCard extends Component {
   constructor(props) {
