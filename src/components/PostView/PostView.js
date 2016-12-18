@@ -1,27 +1,28 @@
 /**
  * Created by sang on 12/16/16.
  */
-import React, { Component } from 'react';
-import { createHtml } from '../../utils';
+import React, { Component, PropTypes } from 'react';
+import { Panel } from 'react-bootstrap';
+import PostCover from './partial/PostCover';
+import PostContent from './partial/PostContent';
 
 class PostView extends Component {
-  constructor(props) {
-    super(props);
-    this.post = props.post;
-  }
   componentDidMount() {
 
   }
   render() {
-    const title = this.post.title.rendered;
+    const { title, featured_image: image, content } = this.props.post;
     return (
-      <div>
-        <h1>{title}</h1>
-        <hr />
-        <div dangerouslySetInnerHTML={createHtml(this.post.content.rendered)} />
-      </div>
+      <Panel className="v-thread">
+        <PostCover title={title} image={image} />
+        <PostContent content={content} />
+      </Panel>
     );
   }
+}
+
+PostView.propTypes = {
+  post: PropTypes.object,
 }
 
 export default PostView;

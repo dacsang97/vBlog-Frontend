@@ -1,7 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import { Tabs, Tab } from 'react-bootstrap';
 import { connect } from 'react-redux';
-import { Sidebar, ContentList, SearchCard, CategoryCard, Icon } from '../components';
+import { Sidebar, ContentList, SearchCard, CategoryCard, ProfileCard, Icon,
+} from '../components';
 import WrapContainer from './WrapContainer';
 import { setTitle } from '../utils';
 
@@ -23,6 +24,7 @@ class Home extends Component {
       <div className="v-wrap">
         <WrapContainer animatedIn="fadeIn">
           <Sidebar>
+            <ProfileCard />
             <SearchCard />
             <CategoryCard />
           </Sidebar>

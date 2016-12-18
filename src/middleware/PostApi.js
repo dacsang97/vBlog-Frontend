@@ -11,4 +11,8 @@ export default class PostApi {
     const url = `${BASE_URL}/posts`;
     return axios.get(url);
   }
+  static loadPost(slug) {
+    const url = `${BASE_URL}/posts?slug=${slug}`;
+    return axios.get(url);
+  }
 }

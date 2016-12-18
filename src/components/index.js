@@ -16,6 +16,9 @@ import NavItemLink from './Navbar/NavItemLink';
 import ProfileCard from './Profile/ProfileCard';
 import ProfileForm from './Profile/ProfileForm';
 
+// Home
+import CoverImage from './CoverImage';
+
 // PostView
 import PostView from './PostView/PostView';
 
@@ -23,5 +26,6 @@ export { Icon, TopMenu, SearchCard, Sidebar,
   ContentList,
   CategoryCard, ProfileCard, ProfileForm,
   Navbar, NavItemLink,
+  CoverImage,
   PostView,
 };

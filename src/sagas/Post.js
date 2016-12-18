@@ -16,8 +16,20 @@ export function* loadAllPost() {
   }
 }
 
+export function* loadPost({ slug }) {
+  try {
+    const response = yield call(PostApi.loadPost, slug);
+    const currentPost = response.data[0];
+    console.log(currentPost);
+    yield put({ type: types.LOAD_POST_SUCCESS, currentPost });
+  } catch (errors) {
+    yield put({ type: types.LOAD_POST_FAILURE, errors });
+  }
+}
+
 export default function* PostSaga() {
   yield [
     takeLatest(types.LOAD_ALL_POST_REQUEST, loadAllPost),
+    takeLatest(types.LOAD_POST_REQUEST, loadPost),
   ];
 }

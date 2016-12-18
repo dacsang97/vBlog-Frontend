@@ -6,7 +6,7 @@ import { Link } from 'react-router';
 import { createHtml } from '../../../utils';
 
 const CardBody = (props) => {
-  const { title, excerpt, slug } = props;
+  const { title, excerpt, slug, author } = props;
   return (
     <div className="card__body">
       <div className="card__category">
@@ -17,7 +17,9 @@ const CardBody = (props) => {
           {title}
         </Link>
       </h2>
-      <div className="card__subtitle">Bender is frying Doc !</div>
+      <div className="card__subtitle">
+        <span className="UserAvatar" style={{ backgroundImageUrl: 'https://up.quizlet.com/41lhs-Sp7WA-256s.jpg', height: '16px', width: '16px' }} />{author.name}
+      </div>
       <div className="card__description" dangerouslySetInnerHTML={createHtml(excerpt)} />
     </div>
   );
