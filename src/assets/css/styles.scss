@@ -156,3 +156,7 @@ body {
     top: 0;
   }
 }
+
+.fb_iframe_widget, .fb_iframe_widget span, .fb_iframe_widget span iframe[style], .fb-comments span, .fb-comments iframe {
+  width: 100% !important;
+}

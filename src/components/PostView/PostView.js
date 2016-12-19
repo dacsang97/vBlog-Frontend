@@ -17,8 +17,8 @@ class PostView extends Component {
       <Panel className="v-thread">
         <PostCover title={title} image={image} />
         <PostContent content={content} />
-        <FacebookProvider appID="245853192502636">
-          <Comments href="http://localhost:3000/posts/the-fourth-post" />
+        <FacebookProvider appID="245853192502636" style={{ width: '100%' }}>
+          <Comments href={document.location.href} />
         </FacebookProvider>
       </Panel>
     );
