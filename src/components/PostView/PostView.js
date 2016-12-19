@@ -6,6 +6,7 @@ import { Panel } from 'react-bootstrap';
 import FacebookProvider, { Comments } from 'react-facebook';
 import PostCover from './partial/PostCover';
 import PostContent from './partial/PostContent';
+import { setTitle } from '../../utils';
 
 class PostView extends Component {
   componentDidMount() {
@@ -13,6 +14,7 @@ class PostView extends Component {
   }
   render() {
     const { title, featured_image: image, content } = this.props.post;
+    setTitle(title);
     return (
       <Panel className="v-thread">
         <PostCover title={title} image={image} />
