@@ -11,14 +11,14 @@ class ProfileCard extends Component {
 
   }
   render() {
-    const { avatar, subtitle } = this.props;
+    const { avatar, title, subtitle } = this.props;
     return (
       <Panel className="v-profile">
         <div className="header">
           <h2 className="title">{subtitle}</h2>
         </div>
         <Image className="image" src={avatar} width="75" height="75" circle />
-        <h5 className="subtitle">Lê Đình Nhật Khánh</h5>
+        <h5 className="subtitle">{title}</h5>
       </Panel>
     );
   }
@@ -26,7 +26,7 @@ class ProfileCard extends Component {
 
 ProfileCard.propTypes = {
   avatar: PropTypes.string,
-  // title: PropTypes.string,
+  title: PropTypes.string,
   subtitle: PropTypes.string,
 }
 

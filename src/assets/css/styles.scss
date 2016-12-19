@@ -24,7 +24,7 @@ body {
       color: #fff;
       font-size: 16px;
       bottom: 0;
-      margin-left: 15px;
+      margin-left: 90px;
     }
   }
   .panel-body {
@@ -34,12 +34,12 @@ body {
   .image {
     position: absolute;
     top: 25px;
-    right: 10px;
+    left: 10px;
   }
   .subtitle {
-    margin-left: 15px;
+    text-align: center;
     margin-top: 22px;
-    font-size: 18px;
+    font-size: 20px;
     color: #3498DB;
   }
 }
