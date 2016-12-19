@@ -4,6 +4,7 @@
 import React, { Component, PropTypes } from 'react';
 import { Row } from 'react-bootstrap';
 import { connect } from 'react-redux';
+import _ from 'lodash';
 import Masonry from 'react-masonry-component';
 import WrapContainer from '../../containers/WrapContainer';
 import { Loading } from '../';
@@ -20,7 +21,8 @@ class ContentList extends Component {
   renderPost() {
     const { posts, users } = this.props;
     return posts.map((item, id) => {
-      const author = users[item.author.id - 1];
+      const authorId = item.author.id;
+      const author = _.find(users, { id: authorId });
       return (
         <PostItem key={id} post={item} author={author} />
       );

@@ -62,7 +62,7 @@
     "classnames": "^2.2.5",
     "humps": "^1.1.0",
     "jwt-decode": "^2.1.0",
-    "lodash": "^4.16.1",
+    "lodash": "^4.17.2",
     "moment": "^2.17.1",
     "normalizr": "^2.2.1",
     "react": "^15.4.1",
