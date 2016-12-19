@@ -19,7 +19,7 @@ const CardBody = (props) => {
         </Link>
       </h2>
       <div className="card__subtitle">
-        <Image src={author.avatar_urls["24"]} circle /> {author.name}
+        <Image src={author.avatar_urls["24"]} height="24px" width="24px" circle /> {author.name}
       </div>
       <div className="card__description" dangerouslySetInnerHTML={createHtml(excerpt)} />
     </div>

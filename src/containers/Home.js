@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { Sidebar, ContentList, SearchCard, CategoryCard, ProfileCard, Icon,
 } from '../components';
 import WrapContainer from './WrapContainer';
+import CategoryActions from '../actions/categories';
 import { setTitle } from '../utils';
 
 const Tab1Title = () => (
@@ -18,6 +19,7 @@ class Home extends Component {
   componentDidMount() {
     setTitle('Trang chủ');
     this.props.getPreData();
+    this.props.getCategory();
   }
   render() {
     return (
@@ -42,10 +44,12 @@ class Home extends Component {
 
 Home.propTypes = {
   getPreData: PropTypes.func,
+  getCategory: PropTypes.func,
 };
 
 const mapDispatchToProps = dispatch => ({
   getPreData: () => dispatch({ type: 'GET_PRE_DATA' }),
+  getCategory: () => dispatch(CategoryActions.loadCategoryListRe()),
 });
 
 export default connect(null, mapDispatchToProps)(Home);

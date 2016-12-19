@@ -3,6 +3,7 @@
  */
 import React, { Component, PropTypes } from 'react';
 import { Panel } from 'react-bootstrap';
+import FacebookProvider, { Comments } from 'react-facebook';
 import PostCover from './partial/PostCover';
 import PostContent from './partial/PostContent';
 
@@ -16,6 +17,9 @@ class PostView extends Component {
       <Panel className="v-thread">
         <PostCover title={title} image={image} />
         <PostContent content={content} />
+        <FacebookProvider appID="245853192502636">
+          <Comments href="http://localhost:3000/posts/the-fourth-post" />
+        </FacebookProvider>
       </Panel>
     );
   }

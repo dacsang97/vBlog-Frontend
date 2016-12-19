@@ -70,6 +70,7 @@
     "react-addons-transition-group": "^15.4.1",
     "react-bootstrap": "^0.30.7",
     "react-dom": "^15.4.1",
+    "react-facebook": "^2.2.3",
     "react-masonry-component": "^4.4.0",
     "react-redux": "^4.4.5",
     "react-router": "^2.6.1",

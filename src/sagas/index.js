@@ -6,6 +6,7 @@
 import LoginSaga from './Login';
 import PostSaga from './Post';
 import UserSaga from './User';
+import CategorySaga from './Category';
 import LoadPreDataSaga from './PreData';
 
 export default function* root() {
@@ -13,6 +14,7 @@ export default function* root() {
     LoginSaga(),
     PostSaga(),
     UserSaga(),
+    CategorySaga(),
     LoadPreDataSaga(),
   ];
 }
